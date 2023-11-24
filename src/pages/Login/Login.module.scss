@@ -1,0 +1,47 @@
+.container {
+    padding        : 12px 30px 30px;
+    min-height     : 100vh;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.title {
+    text-align : center;
+    font-weight: bold;
+}
+
+.row {
+    width: 100%;
+}
+
+.form {
+    width: 100%;
+}
+
+.submitBtn {
+    min-width: 120px;
+}
+
+.cancelBtn {
+    min-width: 120px;
+}
+
+.closeBtn {
+    position : absolute;
+    right    : 12px;
+    top      : 12px;
+    font-size: 18px;
+    cursor   : pointer;
+    z-index  : 1;
+    width    : 32px;
+    padding  : 0;
+}
+
+.forgot {
+    text-decoration: underline;
+}
+
+.footer {
+    padding-top: 30px;
+}

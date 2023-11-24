@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // Set the target ECMAScript version
+    "module": "CommonJS", // Specify module system (CommonJS for Node.js, ESNext for modern browsers)
+    "lib": [
+      "DOM",
+      "ESNext"
+    ], // Define the default library to include
+    "jsx": "react-jsx", // Specify JSX compiler (react or preserve)
+    "strict": true, // Enable strict type checking
+    "esModuleInterop": true, // Enable interoperability between CommonJS and ES modules
+    "skipLibCheck": true, // Skip type checking of declaration files (optional)
+    "forceConsistentCasingInFileNames": true, // Ensure consistent file name casing
+    "noImplicitAny": false, // Disallow implicit 'any' types (change to true for strict mode)
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+    "moduleResolution": "node", // Specify module resolution strategy
+    "baseUrl": "./", // Specify the base directory for resolving non-relative module names
+    "paths": {
+      // Define paths for module resolution (e.g., aliasing)
+      "~services/*": [
+        "src/services/*"
+      ],
+      "~components/*": [
+        "src/components/*"
+      ],
+      "~utils/*": [
+        "src/utils/*"
+      ],
+      "~configs/*": [
+        "src/configs/*"
+      ],
+      "~api": [
+        "src/api/index"
+      ],
+      "~store": [
+        "src/store/index"
+      ],
+      "~api/*": [
+        "src/api/*"
+      ]
+    },
+    "types": [
+      "./src/types/fin"
+    ]
+  },
+  "files": [
+    "src/index.tsx"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ], // Specify the files to include in the project
+  "exclude": [
+    "node_modules"
+  ] // Specify the files to exclude from the project
+}

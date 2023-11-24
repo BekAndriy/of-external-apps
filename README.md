@@ -1,15 +1,34 @@
-# 🚀 Welcome to your new awesome project!
+# External APPs placeholders
 
-This project has been created using **webpack-cli**, you can now run
+Each route is responsible for part of functionality and can be separated by projects.
+Pages should not have dependencies.
+
+## Installations
+
+Install all dependencies required for the project
+
+```
+npm install
+```
+
+### Development
+
+Launch dev server with hot-reloader
+
+```
+npm run serve
+```
+
+### Build
+
+For production
 
 ```
 npm run build
 ```
 
-or
+For development including Source-map.
 
 ```
-yarn build
+npm run build:dev
 ```
-
-to bundle your application

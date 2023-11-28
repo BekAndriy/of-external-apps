@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Button, Space, Table } from 'antd'
-import { FullscreenOutlined } from '@ant-design/icons'
+import { FullscreenOutlined, DeleteOutlined } from '@ant-design/icons'
 import { type StoreFolderType, File } from '~api/store'
 import css from './ContentSection.module.scss'
 import dayjs from 'dayjs'
@@ -18,12 +18,15 @@ export const ContentSection = (props: ContentSectionProps) => {
   const loadData = () => {
     api.get()
       .then((files) => {
-        const sordedFiles = (files || []).sort((a, b) => a.updatedAt < b.updatedAt ? 1 : -1)
-        setRecords(sordedFiles);
+        const sortedFiles = (files || []).sort((a, b) => a.updatedAt < b.updatedAt ? 1 : -1)
+        setRecords(sortedFiles);
       })
   }
   const handleOpen = (fileName: string) => {
     onOpen(`${api.folderPath}/${encodeURIComponent(fileName)}.json`);
+  }
+  const handleDelete = (fileName: string) => {
+    api.delete(fileName).then(loadData)
   }
 
   useEffect(() => {
@@ -53,6 +56,9 @@ export const ContentSection = (props: ContentSectionProps) => {
           width: 50,
           render(record) {
             return <Space>
+              <Button type="text" size="small" onClick={() => handleDelete(record.name)}>
+                <DeleteOutlined />
+              </Button>
               <Button type="text" size="small" onClick={() => handleOpen(record.name)}>
                 <FullscreenOutlined />
               </Button>

@@ -1,0 +1,31 @@
+.container {
+    min-height      : 100vh;
+    background-color: #f0f2f5;
+    flex-direction  : column;
+    width           : 100%;
+}
+
+.head {
+    text-align: center;
+    padding   : 0 20px 50px;
+}
+
+.cards {
+    max-width: 600px;
+    width    : 100%;
+    cursor   : pointer;
+}
+
+.card {
+    transition: all .3s;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: all .3s;
+}
+
+.cardTitle {
+    text-transform: uppercase;
+    font-weight   : 600;
+}

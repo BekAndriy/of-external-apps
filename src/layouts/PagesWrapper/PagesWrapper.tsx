@@ -11,6 +11,8 @@ export const PagesWrapper = () => {
         token && sessionStorage.setItem('access_token', token)
         setIsInitialized(true)
       })
+    } else {
+      setIsInitialized(true)
     }
   }, [])
   return isInitialized ? <Outlet /> : <>Loading...</>

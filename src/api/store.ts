@@ -15,8 +15,8 @@ interface GetMethod {
 export interface StoreFolder {
   folderPath: string
   get: GetMethod
-  save: <T extends object>(fileName: string, data: T) => unknown
-  delete: <T extends object>(fileName: string, data: T) => unknown
+  save: <T extends object>(fileName: string, data: T) => Promise<boolean>
+  delete: (fileName: string) => Promise<boolean>
 }
 
 const getToken = () => `Bearer ${getAuthToken()}`

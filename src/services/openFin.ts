@@ -11,8 +11,8 @@ export const closeWindow = () => {
 }
 
 export const getWindowOptions = (): Promise<OpenFin_2.WindowOptions> => {
-  if (fin.me.isWindow && !finOptions) {
-    finOptions = fin.me.getOptions()
+  if ((fin.me.isWindow || fin.me.isView) && !finOptions) {
+    finOptions = fin.me.getOptions() as any
   }
   return finOptions as Promise<OpenFin_2.WindowOptions>
 }

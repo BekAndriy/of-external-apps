@@ -1,241 +1,325 @@
 export const newsMock = {
-  results: [
+  items: '50',
+  sentiment_score_definition: 'x <= -0.35: Bearish; -0.35 < x <= -0.15: Somewhat-Bearish; -0.15 < x < 0.15: Neutral; 0.15 <= x < 0.35: Somewhat_Bullish; x >= 0.35: Bullish',
+  relevance_score_definition: '0 < x <= 1, with a higher score indicating higher relevance.',
+  feed: [
     {
-      id: 'syzn-tBLBmCE1fF4wYHR_DDOBx--C0P-f1VZ0L_bq4Q',
-      publisher: {
-        name: 'MarketWatch',
-        homepage_url: 'https://www.marketwatch.com/',
-        logo_url: 'https://s3.polygon.io/public/assets/news/logos/marketwatch.svg',
-        favicon_url: 'https://s3.polygon.io/public/assets/news/favicons/marketwatch.ico'
-      },
-      title: 'What if you live to be 100? 7 ways to improve aging for everyone.',
-      author: 'MarketWatch',
-      published_utc: '2023-11-25T19:24:00Z',
-      article_url: 'https://www.marketwatch.com/story/what-if-you-live-to-be-100-seven-ways-to-improve-aging-for-everyone-b13ab760',
-      tickers: [
-        'BLK'
+      title: 'Futures Rise Ahead Of GDP, Fed Data; GM Surges',
+      url: 'https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-gdp-fed-data-gm-stock-surges-on-buyback-dividend-hike/',
+      time_published: '20231129T131000',
+      authors: [
+        "Investor's Business Daily",
+        'SCOTT LEHTONEN'
       ],
-      amp_url: 'https://www.marketwatch.com/amp/story/what-if-you-live-to-be-100-seven-ways-to-improve-aging-for-everyone-b13ab760',
-      image_url: 'https://images.mktw.net/im-18362071/social',
-      description: 'How are we doing with adapting to longer lives and much longer retirements? Not well.'
-    },
-    {
-      id: 'ntI1NK23XSZowJNCbgajmlkIgElm8TDomvtY5y6zUGc',
-      publisher: {
-        name: 'The Motley Fool',
-        homepage_url: 'https://www.fool.com/',
-        logo_url: 'https://s3.polygon.io/public/assets/news/logos/themotleyfool.svg',
-        favicon_url: 'https://s3.polygon.io/public/assets/news/favicons/themotleyfool.ico'
-      },
-      title: 'Massive News for Amazon Stock Investors!',
-      author: 'newsfeedback@fool.com (Parkev Tatevosian, CFA)',
-      published_utc: '2023-11-25T19:12:29Z',
-      article_url: 'https://www.fool.com/investing/2023/11/25/massive-news-for-amazon-stock-investors/',
-      tickers: [
-        'AMZN'
+      summary: "Futures Rise Ahead Of GDP, Fed Data. GM Surges Investor's Business Daily ...",
+      banner_image: 'https://www.investors.com/wp-content/uploads/2017/08/WallStreetFinance2-adobe.jpg',
+      source: 'Investors Business Daily',
+      category_within_source: 'n/a',
+      source_domain: 'www.investors.com',
+      topics: [
+        {
+          topic: 'Technology',
+          relevance_score: '0.25'
+        },
+        {
+          topic: 'Finance',
+          relevance_score: '0.25'
+        },
+        {
+          topic: 'Economy - Monetary',
+          relevance_score: '0.310843'
+        },
+        {
+          topic: 'Retail & Wholesale',
+          relevance_score: '0.25'
+        },
+        {
+          topic: 'Financial Markets',
+          relevance_score: '1.0'
+        },
+        {
+          topic: 'Manufacturing',
+          relevance_score: '0.25'
+        },
+        {
+          topic: 'Earnings',
+          relevance_score: '0.310843'
+        }
       ],
-      image_url: 'https://g.foolcdn.com/editorial/images/756105/person-getting-a-package-delivered.jpg',
-      description: 'Amazon is making phenomenal progress in lowering costs to serve customers.',
-      keywords: [
-        'investing'
+      overall_sentiment_score: 0.187544,
+      overall_sentiment_label: 'Somewhat-Bullish',
+      ticker_sentiment: [
+        {
+          ticker: 'NVDA',
+          relevance_score: '0.097325',
+          ticker_sentiment_score: '0.129725',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'ROKU',
+          relevance_score: '0.161494',
+          ticker_sentiment_score: '0.114874',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'AAPL',
+          relevance_score: '0.129516',
+          ticker_sentiment_score: '0.144593',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'CRWD',
+          relevance_score: '0.097325',
+          ticker_sentiment_score: '0.024629',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'INTU',
+          relevance_score: '0.097325',
+          ticker_sentiment_score: '0.024629',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'DLTR',
+          relevance_score: '0.097325',
+          ticker_sentiment_score: '0.024629',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'FL',
+          relevance_score: '0.097325',
+          ticker_sentiment_score: '0.024629',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'GM',
+          relevance_score: '0.097325',
+          ticker_sentiment_score: '0.183184',
+          ticker_sentiment_label: 'Somewhat-Bullish'
+        },
+        {
+          ticker: 'IVZ',
+          relevance_score: '0.032513',
+          ticker_sentiment_score: '0.106802',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'WDAY',
+          relevance_score: '0.097325',
+          ticker_sentiment_score: '0.024629',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'UNH',
+          relevance_score: '0.129516',
+          ticker_sentiment_score: '0.067697',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'MSFT',
+          relevance_score: '0.129516',
+          ticker_sentiment_score: '0.144593',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'SHOP',
+          relevance_score: '0.129516',
+          ticker_sentiment_score: '0.17391',
+          ticker_sentiment_label: 'Somewhat-Bullish'
+        },
+        {
+          ticker: 'NTAP',
+          relevance_score: '0.097325',
+          ticker_sentiment_score: '0.024629',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'TSLA',
+          relevance_score: '0.097325',
+          ticker_sentiment_score: '0.129725',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'V',
+          relevance_score: '0.161494',
+          ticker_sentiment_score: '0.138214',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'AMD',
+          relevance_score: '0.161494',
+          ticker_sentiment_score: '0.041196',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'SPLK',
+          relevance_score: '0.097325',
+          ticker_sentiment_score: '0.024629',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'AMZN',
+          relevance_score: '0.129516',
+          ticker_sentiment_score: '0.072425',
+          ticker_sentiment_label: 'Neutral'
+        }
       ]
     },
     {
-      id: 'vf6ZvE-E1_hHTuUx-VMxwfzZFd-djqxgIwwasnr2lu8',
-      publisher: {
-        name: 'MarketWatch',
-        homepage_url: 'https://www.marketwatch.com/',
-        logo_url: 'https://s3.polygon.io/public/assets/news/logos/marketwatch.svg',
-        favicon_url: 'https://s3.polygon.io/public/assets/news/favicons/marketwatch.ico'
-      },
-      title: 'What happens to credit-card debt after you die? Will my mother’s IRA be used to pay off her loans? ',
-      author: 'MarketWatch',
-      published_utc: '2023-11-25T19:02:00Z',
-      article_url: 'https://www.marketwatch.com/story/what-happens-to-credit-card-debt-after-you-die-will-my-mothers-ira-be-used-to-pay-off-her-personal-loans-697e52fa',
-      tickers: [
-        'EFX',
-        'TRU',
-        'META'
+      title: 'AAPL: Apple  ( AAPL )  Gains 46% YTD: Are Further Upsides Left in the Stock?',
+      url: 'https://stocknews.com/news/aapl-hpq-vtkly-dakt-gs-apple-aapl-gains-46-ytd-are-further-upsides-left-in/',
+      time_published: '20231129T130631',
+      authors: [
+        'StockNews.com Staff'
       ],
-      amp_url: 'https://www.marketwatch.com/amp/story/what-happens-to-credit-card-debt-after-you-die-will-my-mothers-ira-be-used-to-pay-off-her-personal-loans-697e52fa',
-      image_url: 'https://images.mktw.net/im-24966948/social',
-      description: "'Her house is paid off, and will eventually be sold.'"
-    },
-    {
-      id: '9nFd6ZMsWzJzvJv1p-lrY1MEkO2864bxTDCEWtY62xQ',
-      publisher: {
-        name: 'MarketWatch',
-        homepage_url: 'https://www.marketwatch.com/',
-        logo_url: 'https://s3.polygon.io/public/assets/news/logos/marketwatch.svg',
-        favicon_url: 'https://s3.polygon.io/public/assets/news/favicons/marketwatch.ico'
-      },
-      title: "'AI will be able to do everything,' Elon Musk says. He's wrong about jobs -- for now.",
-      author: 'MarketWatch',
-      published_utc: '2023-11-25T18:34:00Z',
-      article_url: 'https://www.marketwatch.com/story/ai-will-be-able-to-do-everything-elon-musk-says-hes-wrong-about-jobs-for-now-353e91e3',
-      tickers: [
-        'TSLA'
+      summary: 'AAPL: Apple ( AAPL ) Gains 46% YTD: Are Further Upsides Left in ... ...',
+      banner_image: 'https://stocknews.com/wp-content/uploads/2022/12/Aanchal-Sugandh_Headshot.jpg',
+      source: 'Stocknews.com',
+      category_within_source: 'n/a',
+      source_domain: 'stocknews.com',
+      topics: [
+        {
+          topic: 'Financial Markets',
+          relevance_score: '0.503496'
+        },
+        {
+          topic: 'Manufacturing',
+          relevance_score: '0.333333'
+        },
+        {
+          topic: 'Earnings',
+          relevance_score: '0.99999'
+        },
+        {
+          topic: 'Technology',
+          relevance_score: '0.333333'
+        },
+        {
+          topic: 'Finance',
+          relevance_score: '0.333333'
+        }
       ],
-      amp_url: 'https://www.marketwatch.com/amp/story/ai-will-be-able-to-do-everything-elon-musk-says-hes-wrong-about-jobs-for-now-353e91e3',
-      image_url: 'https://images.mktw.net/im-877694/social',
-      description: 'The odds of AI causing a jobs apocalypse are small.'
-    },
-    {
-      id: 'Euz6jyQNYaRaeu2CifDJ248JI6GUn-r60Nd_zYQ1Dks',
-      publisher: {
-        name: 'The Motley Fool',
-        homepage_url: 'https://www.fool.com/',
-        logo_url: 'https://s3.polygon.io/public/assets/news/logos/themotleyfool.svg',
-        favicon_url: 'https://s3.polygon.io/public/assets/news/favicons/themotleyfool.ico'
-      },
-      title: 'Tesla Stock: How Future Artificial Intelligence (AI) Growth Can Explain Its High Valuation',
-      author: 'newsfeedback@fool.com (Jeremy Bowman)',
-      published_utc: '2023-11-25T18:06:00Z',
-      article_url: 'https://www.fool.com/investing/2023/11/25/tesla-stock-how-future-artificial-intelligence-ai/',
-      tickers: [
-        'TSLA',
-        'F',
-        'TM',
-        'GM',
-        'FSR',
-        'LCID',
-        'RIVN'
-      ],
-      image_url: 'https://g.foolcdn.com/editorial/images/755964/tesla-cybertruck-camping.jpg',
-      description: "Tesla trades at a steep premium compared to other carmakers. Here's why.",
-      keywords: [
-        'investing'
+      overall_sentiment_score: 0.185477,
+      overall_sentiment_label: 'Somewhat-Bullish',
+      ticker_sentiment: [
+        {
+          ticker: 'HPQ',
+          relevance_score: '0.079656',
+          ticker_sentiment_score: '-0.044634',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'DAKT',
+          relevance_score: '0.079656',
+          ticker_sentiment_score: '-0.044634',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'AAPL',
+          relevance_score: '0.657888',
+          ticker_sentiment_score: '0.193592',
+          ticker_sentiment_label: 'Somewhat-Bullish'
+        },
+        {
+          ticker: 'GS',
+          relevance_score: '0.158519',
+          ticker_sentiment_score: '0.134488',
+          ticker_sentiment_label: 'Neutral'
+        },
+        {
+          ticker: 'VTKLF',
+          relevance_score: '0.039878',
+          ticker_sentiment_score: '-0.042363',
+          ticker_sentiment_label: 'Neutral'
+        }
       ]
     },
     {
-      id: 'E1pKGpAsMKRAuvZ74mAclP8Uvdt7DwSgpIyXF11XsS0',
-      publisher: {
-        name: 'MarketWatch',
-        homepage_url: 'https://www.marketwatch.com/',
-        logo_url: 'https://s3.polygon.io/public/assets/news/logos/marketwatch.svg',
-        favicon_url: 'https://s3.polygon.io/public/assets/news/favicons/marketwatch.ico'
-      },
-      title: 'Stay defensive, with lots of cash: This mutual fund giant is cautious about markets in 2024',
-      author: 'MarketWatch',
-      published_utc: '2023-11-25T16:54:00Z',
-      article_url: 'https://www.marketwatch.com/story/why-is-this-mutual-fund-giant-cautious-about-markets-in-2024-t-rowe-price-shares-its-outlook-9d5385c6',
-      tickers: [
-        'TROW',
-        'CRBG',
-        'STLD'
+      title: 'Apple Has a Trump Card in Artificial Intelligence',
+      url: 'https://www.fool.com/investing/2023/11/29/apple-has-a-trump-card-in-artificial-intelligence/',
+      time_published: '20231129T123000',
+      authors: [
+        'Travis Hoium'
       ],
-      amp_url: 'https://www.marketwatch.com/amp/story/why-is-this-mutual-fund-giant-cautious-about-markets-in-2024-t-rowe-price-shares-its-outlook-9d5385c6',
-      image_url: 'https://mw3.wsj.net/mw5/content/logos/mw_logo_social.png',
-      description: "5 key investing insights from T. Rowe Price's top strategists and managers."
-    },
-    {
-      id: 'Z_7mUFD3jGlUgZTctuwNLrHmxzRCblVPYWjdtR-fkXc',
-      publisher: {
-        name: 'Benzinga',
-        homepage_url: 'https://www.benzinga.com/',
-        logo_url: 'https://s3.polygon.io/public/assets/news/logos/benzinga.svg',
-        favicon_url: 'https://s3.polygon.io/public/assets/news/favicons/benzinga.ico'
-      },
-      title: "Elon Musk's X Could Lose $75 Million In Ad Revenue Over His Support For Antisemitic Post, Says Report",
-      author: 'Bibhu Pattnaik',
-      published_utc: '2023-11-25T16:51:37Z',
-      article_url: 'https://www.benzinga.com/news/23/11/35949518/elon-musks-x-could-lose-75-million-in-ad-revenue-over-his-support-for-antisemitic-post-says-report',
-      tickers: [
-        'AMZN',
-        'MSFT',
-        'ORCL',
-        'DIS',
-        'KO',
-        'WBD',
-        'AAPL',
-        'ABNB'
+      summary: "Apple isn't the leader in AI today, but it will play a critical role in the technology's future.",
+      banner_image: 'https://g.foolcdn.com/editorial/images/756049/ai-image.jpg',
+      source: 'Motley Fool',
+      category_within_source: 'n/a',
+      source_domain: 'www.fool.com',
+      topics: [
+        {
+          topic: 'Technology',
+          relevance_score: '1.0'
+        }
       ],
-      amp_url: 'https://www.benzinga.com/amp/content/35949518',
-      image_url: 'https://cdn.benzinga.com/files/images/story/2023/11/25/shutterstock_2318800285_3.jpg?width=1200\u0026height=800\u0026fit=crop',
-      description: "Social media platform X, which is owned by Elon Musk, is potentially facing a substantial loss in advertising revenue.\nWhat Happened: Recent developments suggest a downturn of up to $75 million by year's end, as major advertisers reconsider their engagement with the platform, The New York Times reported. \nTriggered by Musk's endorsement of an antisemitic post, prominent companies like Walt Disney (NYSE: DIS) and Warner Bros Discovery (NASDAQ: WBD) have temporarily halted their advertising campaigns on X.\nAccording to the report, internal documents reveal that more than 200 ad units from companies like Airbnb Inc. (NASDAQ: ABNB), Amazon.com Inc. (NASDAQ: AMZN), Coca-Cola Company (NYSE: KO), and Microsoft Corporation (NASDAQ: MSFT) were reevaluating ...",
-      keywords: [
-        'News',
-        'Social Media',
-        'Top Stories',
-        'Tech',
-        'General'
+      overall_sentiment_score: 0.297506,
+      overall_sentiment_label: 'Somewhat-Bullish',
+      ticker_sentiment: [
+        {
+          ticker: 'AAPL',
+          relevance_score: '0.922387',
+          ticker_sentiment_score: '0.588718',
+          ticker_sentiment_label: 'Bullish'
+        }
       ]
     },
     {
-      id: 'S5JgH5Y54_gycvdAJReQ9MA0KGLMHqNrxTaf-6uTsUA',
-      publisher: {
-        name: 'The Motley Fool',
-        homepage_url: 'https://www.fool.com/',
-        logo_url: 'https://s3.polygon.io/public/assets/news/logos/themotleyfool.svg',
-        favicon_url: 'https://s3.polygon.io/public/assets/news/favicons/themotleyfool.ico'
-      },
-      title: '5 Struggling Stocks to Buy at a Discount',
-      author: 'newsfeedback@fool.com (Jeff Santoro)',
-      published_utc: '2023-11-25T16:43:00Z',
-      article_url: 'https://www.fool.com/investing/2023/11/25/5-struggling-stocks-to-buy-at-a-discount/',
-      tickers: [
-        'SHOP',
-        'SCHW',
-        'DIS',
-        'LMND',
-        'OM'
+      title: "Lost Your iPhone And Receiving Weird Texts To Unlock It? Here's What You Need To Do - Apple  ( NASDAQ:AAPL ) ",
+      url: 'https://www.benzinga.com/news/23/11/35997158/lost-your-iphone-and-receiving-weird-texts-to-unlock-it-heres-what-you-need-to-do',
+      time_published: '20231129T115613',
+      authors: [
+        'Rounak Jain'
       ],
-      image_url: 'https://g.foolcdn.com/editorial/images/756030/group-of-people-talking-around-office-table.jpg',
-      description: 'These stocks have been crushed by the market, but could be diamonds in the rough for patient investors.',
-      keywords: [
-        'investing'
+      summary: "If you have lost your iPhone recently and are receiving weird texts asking you to remove the device from your account or unlock it, stop even thinking about it. What Happened: Apple Inc.'s AAPL security features try to make it as difficult as possible for iPhone thieves to use their victims' ...",
+      banner_image: 'https://cdn.benzinga.com/files/images/story/2023/Stolen-iPhone.jpeg?width=1200&height=800&fit=crop',
+      source: 'Benzinga',
+      category_within_source: 'News',
+      source_domain: 'www.benzinga.com',
+      topics: [
+        {
+          topic: 'Technology',
+          relevance_score: '1.0'
+        }
+      ],
+      overall_sentiment_score: -0.233106,
+      overall_sentiment_label: 'Somewhat-Bearish',
+      ticker_sentiment: [
+        {
+          ticker: 'AAPL',
+          relevance_score: '0.722509',
+          ticker_sentiment_score: '-0.234186',
+          ticker_sentiment_label: 'Somewhat-Bearish'
+        }
       ]
     },
     {
-      id: '8TQwHOD9e4aikF5NvhSpfAZp4BpX9j1u8q7i0YoHSyM',
-      publisher: {
-        name: 'MarketWatch',
-        homepage_url: 'https://www.marketwatch.com/',
-        logo_url: 'https://s3.polygon.io/public/assets/news/logos/marketwatch.svg',
-        favicon_url: 'https://s3.polygon.io/public/assets/news/favicons/marketwatch.ico'
-      },
-      title: 'Black Friday online shopping up 7.5%, a new record',
-      author: 'MarketWatch',
-      published_utc: '2023-11-25T16:41:00Z',
-      article_url: 'https://www.marketwatch.com/story/black-friday-online-shopping-up-more-than-7-poised-to-set-new-record-4e693faa',
-      tickers: [
-        'JWN'
+      title: "Apple's Rumored Low-Cost Vision Pro Variant To Slash Production Costs By Half: Report - Apple  ( NASDAQ:AAPL ) ",
+      url: 'https://www.benzinga.com/news/23/11/35996684/apples-rumored-low-cost-vision-pro-variant-to-slash-production-costs-by-half-report',
+      time_published: '20231129T113638',
+      authors: [
+        'Sudhanshu Singh'
       ],
-      amp_url: 'https://www.marketwatch.com/amp/story/black-friday-online-shopping-up-more-than-7-poised-to-set-new-record-4e693faa',
-      image_url: 'https://images.mktw.net/im-16819676/social',
-      description: 'Americans have spent more than $7 billion shopping online during Black Friday, snapping up TVs, smart watches, Barbie dolls and more.'
-    },
-    {
-      id: 'NftLUeH4HfBFYP2elLtheJm2R6VvS86eVU26KtgL48k',
-      publisher: {
-        name: 'MarketWatch',
-        homepage_url: 'https://www.marketwatch.com/',
-        logo_url: 'https://s3.polygon.io/public/assets/news/logos/marketwatch.svg',
-        favicon_url: 'https://s3.polygon.io/public/assets/news/favicons/marketwatch.ico'
-      },
-      title: 'Americans did a record amount of shopping on Thanksgiving. Here’s what they bought.',
-      author: 'MarketWatch',
-      published_utc: '2023-11-25T16:26:00Z',
-      article_url: 'https://www.marketwatch.com/story/americans-did-a-record-amount-of-shopping-on-thanksgiving-heres-what-they-bought-a0033243',
-      tickers: [
-        'ADBE',
-        'WMT',
-        'TGT',
-        'DIS',
-        'MAT',
-        'SONY',
-        'MSFT',
-        'RBLX',
-        'AAPL',
-        'WBD'
+      summary: 'In a strategic move, tech giant Apple Inc. AAPL is reportedly developing a budget-friendly version of its Vision Pro headset. This move is expected to cut production costs by approximately 50%, as per industry insiders.',
+      banner_image: 'https://cdn.benzinga.com/files/images/story/2023/Apple-WWCD23-Vision-Pro-lifestyle-workin.jpeg?width=1200&height=800&fit=crop',
+      source: 'Benzinga',
+      category_within_source: 'News',
+      source_domain: 'www.benzinga.com',
+      topics: [
+        {
+          topic: 'Technology',
+          relevance_score: '1.0'
+        }
       ],
-      amp_url: 'https://www.marketwatch.com/amp/story/americans-did-a-record-amount-of-shopping-on-thanksgiving-heres-what-they-bought-a0033243',
-      image_url: 'https://images.mktw.net/im-76039328/social',
-      description: "Hot sellers included Disney Little People figurines, and Mattel’s Uno Show 'Em No Mercy card game."
+      overall_sentiment_score: 0.158375,
+      overall_sentiment_label: 'Somewhat-Bullish',
+      ticker_sentiment: [
+        {
+          ticker: 'AAPL',
+          relevance_score: '0.531326',
+          ticker_sentiment_score: '0.179695',
+          ticker_sentiment_label: 'Somewhat-Bullish'
+        }
+      ]
     }
-  ],
-  status: 'OK',
-  request_id: '12ff4e3e26f21ad2a90356eae0088f57',
-  count: 10,
-  next_url: 'https://api.polygon.io/v2/reference/news?cursor=YXA9MjAyMy0xMS0yNVQxNiUzQTI2JTNBMDBaJmFzPU5mdExVZUg0SGZCRllQMmVsTHRoZUptMlI2VnZTODZlVlUyNkt0Z0w0OGsmb3JkZXI9ZGVzY2VuZGluZw'
+  ]
 }

@@ -1,30 +1,23 @@
-import { useEffect, useState, useRef, useMemo } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { Line } from '@antv/g2plot'
 import * as api from '~api'
 import css from './Chart.module.scss'
 import dayjs from 'dayjs'
 import { Tickers, useTickers } from '../components/Tickers/Tickers'
-import { RSIValue } from '~api/apps'
 
 interface RSIParsedValue {
   ticker: string
   timestamp: string
   value: number
 }
-type RSIByTickers = Record<string, RSIParsedValue[]>;
+type RSIByTickers = Record<string, RSIParsedValue[]>
 
-const parseTickers = (tickers: RSIValue[], ticker: string): RSIParsedValue[] => {
-  return tickers.map((item) => ({
-    ...item,
-    timestamp: dayjs(item.timestamp).format('MMM D, YYYY'),
-    ticker
-  }))
-}
+const DATE_FORMAT = 'MMM D, YYYY'
 
 export const ChartApp = () => {
-  const [dataset, setDataset] = useState<RSIByTickers>({});
+  const [dataset, setDataset] = useState<RSIByTickers>({})
   const { tickers, removeTicker } = useTickers()
-  const chartRef = useMemo<{ chart: Line | null }>(() => ({ chart: null }), []);
+  const chartRef = useMemo<{ chart: Line | null }>(() => ({ chart: null }), [])
 
   useEffect(() => {
     const loadPromises = tickers.map<Promise<RSIParsedValue[]>>((ticker) => {
@@ -32,17 +25,24 @@ export const ChartApp = () => {
         return Promise.resolve(dataset[ticker])
       }
       return api.apps.getRSI(ticker)
-        .then((res) => {
-          const parsed = parseTickers(res.results.values, ticker)
-          setDataset((rsiData) => ({ ...rsiData, [ticker]: parsed }))
+        .then(({ 'Time Series (Daily)': records }) => {
+          const parsed = Object.entries(records).map(([date, records]) => ({
+            value: +records['4. close'],
+            timestamp: dayjs(date).format(DATE_FORMAT),
+            ticker
+          } satisfies RSIParsedValue))
+          setDataset((rsiData) => ({
+            ...rsiData,
+            [ticker]: parsed
+          }))
           return parsed
         })
         .catch(() => [])
-    });
+    })
     Promise.allSettled(loadPromises)
       .then((recs) => recs.map((rec) => rec.status === 'fulfilled' ? rec.value : null))
       .then((data) => {
-        const rsiRecords = data.flat().filter(Boolean) as RSIParsedValue[];
+        const rsiRecords = data.flat().filter(Boolean) as RSIParsedValue[]
         const minValue = Math.min(...rsiRecords.map(({ value }) => value))
         const val = ((minValue - (minValue % 10)) - 10)
         const minLimit = parseInt(`${val < 0 ? 0 : val}`)
@@ -70,7 +70,6 @@ export const ChartApp = () => {
             data: rsiRecords
           })
         }
-
       })
   }, [tickers])
 

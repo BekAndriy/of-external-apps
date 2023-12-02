@@ -1,4 +1,5 @@
 import { Dropdown, MenuProps, Space, Table, Tag } from 'antd'
+import { Helmet } from 'react-helmet'
 import { useState, useEffect } from 'react'
 import * as api from '~api'
 import { News } from '~api/apps'
@@ -103,6 +104,9 @@ export const NewsApp = () => {
   }, [])
 
   return <>
+    <Helmet>
+      <title>News / {tickers.toString()}</title>
+    </Helmet>
     <Tickers tickers={tickers} handleClose={removeTicker} />
     <Table size="small"
       rowKey="id"

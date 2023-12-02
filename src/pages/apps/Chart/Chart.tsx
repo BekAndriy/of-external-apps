@@ -1,4 +1,5 @@
-import { useEffect, useState, useRef, useMemo } from 'react'
+import { useEffect, useState, useMemo } from 'react'
+import { Helmet } from 'react-helmet'
 import { Line } from '@antv/g2plot'
 import * as api from '~api'
 import css from './Chart.module.scss'
@@ -75,6 +76,9 @@ export const ChartApp = () => {
   }, [tickers])
 
   return <div className={css.container}>
+    <Helmet>
+      <title>Chart / {tickers.toString()}</title>
+    </Helmet>
     <Tickers tickers={tickers} handleClose={removeTicker} />
     <div id='js-line-chart-container' />
   </div>

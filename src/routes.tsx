@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes as ReactRoutes } from 'react-router-dom'
-import Main from './pages/Main/Main'
-import Login from './pages/Login/Login'
-import NotImplemented from './pages/NotImplemented/NotImplemented'
+import Main from './apps/Recent/Recent'
+import Login from './apps/Login/Login'
+import NotImplemented from './apps/NotImplemented/NotImplemented'
 import { PagesWrapper } from './layouts/PagesWrapper/PagesWrapper'
-import { AppsSelector } from './pages/AppsSelector/AppsSelector'
-import { NewsApp } from './pages/apps/News/News'
-import { ChartApp } from './pages/apps/Chart/Chart'
+import { AppsSelector } from './apps/AppsSelector/AppsSelector'
+import { NewsApp } from './apps/News/News'
+import { ChartApp } from './apps/Chart/Chart'
+import { About } from './apps/About/About'
 
 const Routes = () => (
   <BrowserRouter>
@@ -17,6 +18,7 @@ const Routes = () => (
         <Route path="/apps" index element={<AppsSelector />} />
         <Route path="/apps/news" index element={<NewsApp />} />
         <Route path="/apps/chart" index element={<ChartApp />} />
+        <Route path="/apps/about" index element={<About />} />
       </Route>
     </ReactRoutes>
   </BrowserRouter>

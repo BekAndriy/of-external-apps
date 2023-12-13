@@ -1,12 +1,14 @@
 import { Dropdown, MenuProps, Space, Table, Tag } from 'antd'
 import { Helmet } from 'react-helmet'
+import dayjs from 'dayjs'
 import { useState, useEffect } from 'react'
+
 import * as api from '~api'
 import { News } from '~api/apps'
-import css from './News.module.scss'
-import { Tickers, useTickers } from '../components/Tickers/Tickers'
-import dayjs from 'dayjs'
+import { Tickers, useTickers } from '~components/Tickers/Tickers'
 import { debounce } from '~services/data'
+
+import css from './News.module.scss'
 
 interface TickersProps {
   tickers: News['tickers']

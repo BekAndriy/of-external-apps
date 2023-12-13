@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import { Button, Layout } from 'antd'
-import { ContentSection } from './components/ContentSection/ContentSection'
+
 import * as api from '~api'
-import css from './Main.module.scss'
 import { Title } from './components/Title/Title'
 import { useIAB } from '~services/useIAB'
 import { type File } from '~api/store'
 import { isOpenFin } from '~services/openFin'
+
+import { ContentSection } from './components/ContentSection/ContentSection'
+import css from './Recent.module.scss'
 
 const APIs = {
   workspaces: api.store.workspaces,
@@ -30,7 +32,7 @@ const sections = [
   }
 ]
 
-const MainLayout = () => {
+const Recent = () => {
   const [records, setRecords] = useState<Record<string, File[]>>({})
   const IAM = useIAB(COMMUNICATION_CHANNEL, RECENT_TOPIC)
 
@@ -39,8 +41,8 @@ const MainLayout = () => {
   }
   const handleOpen = (fileName: string, folder: string) => {
     IAM.send(RECENT_TOPIC, {
-      action: 'open',
-      filePath: `${folder}/${encodeURIComponent(fileName)}.json`
+      action: `${folder}-open`,
+      fileName
     })
   }
 
@@ -106,4 +108,4 @@ const MainLayout = () => {
   )
 }
 
-export default MainLayout
+export default Recent

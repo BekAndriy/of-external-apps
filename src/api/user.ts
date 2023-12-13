@@ -26,7 +26,7 @@ export const login = (data: LoginParams) => {
     .then((res) => res.data)
 }
 export const getProfile = () => {
-  return axios.get<Profile>(`${API_URLS.user}/auth/profile`, {
+  return axios.get<Profile>(`${API_URLS.user}/profile`, {
     headers: {
       Authorization: getToken()
     }

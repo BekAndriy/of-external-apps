@@ -15,12 +15,12 @@ interface Values {
 const { Title } = Typography
 
 const Login = () => {
-  const IAM = useIAB('apps/auth', 'login')
+  const IAM = useIAB('apps/auth', 'response')
   const handleSubmit = (values: Values) => {
     const { email, password, remember } = values
     api.user.login({ email, password })
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      .then(({ access_token }) => IAM.send('login', {
+      .then(({ access_token }) => IAM.send('response', {
         token: access_token,
         rememberMeChecked: remember
       }))

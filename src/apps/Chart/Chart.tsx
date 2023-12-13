@@ -1,11 +1,13 @@
 import { useEffect, useState, useMemo } from 'react'
 import { Helmet } from 'react-helmet'
 import { Line } from '@antv/g2plot'
-import * as api from '~api'
-import css from './Chart.module.scss'
 import dayjs from 'dayjs'
-import { Tickers, useTickers } from '../components/Tickers/Tickers'
-import { RSIValue } from '~api/apps'
+
+import * as api from '~api'
+import { Tickers, useTickers } from '~components/Tickers/Tickers'
+import { RSIValue } from '~api/apps';
+
+import css from './Chart.module.scss'
 
 interface RSIParsedValue {
   ticker: string

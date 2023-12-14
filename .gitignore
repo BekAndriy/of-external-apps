@@ -2,3 +2,10 @@ node_modules
 dist
 *-lock.json
 .serverless
+
+# Terraform initialization files
+.terraform/
+.terraform.*.lock.*
+.terraform.lock.*
+terraform.tfstate
+terraform.tfstate.*

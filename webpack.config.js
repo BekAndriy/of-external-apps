@@ -4,6 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -15,14 +16,18 @@ const config = {
   devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   devServer: {
     open: false,
     host: 'localhost',
     hot: true,
     historyApiFallback: true,
-    port: 3000
+    port: 3000,
+    static: {
+      directory: path.resolve(__dirname, './mocks'),
+      publicPath: '/mocks'
+    }
   },
 
   plugins: [
@@ -73,12 +78,14 @@ const config = {
 module.exports = () => {
   if (isProduction) {
     config.mode = 'production';
-
     config.plugins.push(new MiniCssExtractPlugin());
-
-
     config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
-
+    config.plugins.push(new CopyPlugin({
+      patterns: [
+        'mocks/*.json',
+        'mocks/RSI/*.json'
+      ],
+    }))
   } else {
     config.mode = 'development';
   }

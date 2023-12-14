@@ -8,7 +8,7 @@ interface TickersProps {
   handleClose: (ticker: string) => unknown
 }
 
-const DEFAULT_TAG = 'EPAM'
+const DEFAULT_TAG = 'GOGL'
 const CONTEXT_TYPE = 'instrument'
 
 export const useTickers = () => {

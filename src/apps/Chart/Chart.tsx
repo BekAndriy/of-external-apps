@@ -70,7 +70,10 @@ export const ChartApp = () => {
           chartRef.chart.render()
         } else {
           chartRef.chart.update({
-            data: rsiRecords
+            data: rsiRecords,
+            yAxis: {
+              minLimit
+            }
           })
         }
 

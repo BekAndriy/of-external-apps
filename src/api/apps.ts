@@ -1,8 +1,6 @@
 import axios from 'axios'
 
-import { newsMock } from './mocks/news'
-import { rsiMock } from './mocks/rsi'
-import { withMock } from './utils'
+const LOAD_MOCKED_DATA = true
 
 const getStartAndEndCDate = () => {
   const year = new Date().getFullYear()
@@ -52,13 +50,18 @@ interface NewsRes {
   next_url: string
 }
 
-export const getNews = withMock((ticker: string) => {
+export const getNews = (ticker: string): Promise<NewsRes> => {
+  if (LOAD_MOCKED_DATA) {
+    // fetch mocked data
+    return fetch('/mocks/news.json').then((res) => res.json())
+  }
+
   const { end, start } = getStartAndEndUTCDate()
   return axios.get<NewsRes>(`https://api.polygon.io/v2/reference/news?ticker=${ticker}&published_utc.gt=${start}&published_utc.lte=${end}&apiKey=YFrjbHiaWV4hB1726logZEGeWNpqeyI4`)
     .then(({
       data
     }) => data)
-}, newsMock as NewsRes)
+}
 
 export interface RSIValue {
   timestamp: number
@@ -79,11 +82,14 @@ interface RSIRes {
 
 // Relative Strength Index
 // https://polygon.io/docs/stocks/get_v1_indicators_rsi__stockticker
-export const getRSI = withMock((ticker: string) => {
-  // data from the prev year as a test
+export const getRSI = (ticker: string): Promise<RSIRes> => {
+  if (LOAD_MOCKED_DATA) {
+    // data from the prev year as a test
+    return fetch(`/mocks/RSI/${ticker}.json`).then((res) => res.json())
+  }
   const { end, start } = getStartAndEndCDate()
   return axios.get<RSIRes>(`https://api.polygon.io/v1/indicators/rsi/${ticker}?adjusted=true&timestamp.gt=${start}&timestamp.lte=${end}&series_type=close&order=asc&limit=${24}&apiKey=YFrjbHiaWV4hB1726logZEGeWNpqeyI4`)
     .then(({
       data
     }) => data)
-}, rsiMock as RSIRes)
+}

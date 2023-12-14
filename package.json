@@ -21,6 +21,7 @@
     "@types/react": "^18.2.33",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@webpack-cli/generators": "^3.0.7",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",

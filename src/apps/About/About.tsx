@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { Table } from 'antd'
 import { isOpenFin } from '~services/openFin'
 
@@ -9,10 +10,6 @@ const getVersion = async (): Promise<string> => {
   return 'Invalid Platform'
 }
 
-const isAppCertified = async (): Promise<boolean> => isOpenFin && fin.System.getVersion()
-  .then(() => true)
-  .catch(() => false)
-
 const getDataSource = async () => {
   return [
     {
@@ -21,7 +18,7 @@ const getDataSource = async () => {
     },
     {
       name: 'Certified',
-      value: await isAppCertified().then((isCertified) => String(isCertified).toUpperCase())
+      value: 'FALSE'
     }
   ]
 }
@@ -36,15 +33,22 @@ const useData = () => {
 
 export const About = () => {
   const data = useData()
-  return <Table
-    dataSource={data}
-    columns={[
-      {
-        dataIndex: 'name'
-      },
-      {
-        dataIndex: 'value'
-      }
-    ]}
-    pagination={{ hideOnSinglePage: true }} />
+  return <>
+    <Helmet>
+      <title>About Platform</title>
+    </Helmet>
+    <Table
+      rowKey="name"
+      dataSource={data}
+      showHeader={false}
+      columns={[
+        {
+          dataIndex: 'name'
+        },
+        {
+          dataIndex: 'value'
+        }
+      ]}
+      pagination={{ hideOnSinglePage: true }} />
+  </>
 }
